@@ -1,6 +1,6 @@
-package com.sams.jwt.model.service;
+package com.sams.jwt.service;
 
-import com.sams.jwt.api.repository.AppUserRepository;
+import com.sams.jwt.repository.AppUserRepository;
 import com.sams.jwt.api.token.ConfirmationToken;
 import com.sams.jwt.model.dto.AppUser;
 import lombok.AllArgsConstructor;

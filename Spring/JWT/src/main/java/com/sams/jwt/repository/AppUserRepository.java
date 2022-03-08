@@ -1,4 +1,4 @@
-package com.sams.jwt.api.repository;
+package com.sams.jwt.repository;
 
 import com.sams.jwt.model.dto.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,8 +11,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional(readOnly = true)
-public interface AppUserRepository
-        extends JpaRepository<AppUser, Long> {
+public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
     Optional<AppUser> findByEmail(String email);
 

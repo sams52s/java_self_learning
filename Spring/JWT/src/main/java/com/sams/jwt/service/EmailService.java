@@ -1,6 +1,6 @@
-package com.sams.jwt.model.service;
+package com.sams.jwt.service;
 
-import com.sams.jwt.api.controller.email.EmailSender;
+import com.sams.jwt.api.email.EmailSender;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,7 @@ public class EmailService implements EmailSender {
             helper.setText(email, true);
             helper.setTo(to);
             helper.setSubject("Confirm your email");
-            helper.setFrom("hello@amigoscode.com");
+            helper.setFrom("sams@abcd.com");
             mailSender.send(mimeMessage);
         } catch (MessagingException e) {
             LOGGER.error("failed to send email", e);

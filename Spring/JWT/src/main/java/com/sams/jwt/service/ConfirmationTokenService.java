@@ -1,4 +1,4 @@
-package com.sams.jwt.model.service;
+package com.sams.jwt.service;
 
 import com.sams.jwt.api.token.ConfirmationToken;
 import com.sams.jwt.api.token.ConfirmationTokenRepository;
