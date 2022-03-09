@@ -40,10 +40,10 @@ public class AppUserController {
     public String getRegistration() {
         return "registration";
     }
-/*    @PostMapping(path = "registration")
+   @PostMapping(path = "registration")
     public String register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);
-    }*/
+    }
 
     @GetMapping(path = "api/v1/registration/confirm")
     public String confirm(@RequestParam("token") String token) {
