@@ -12,7 +12,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
-
         /* BASIC */
 
         html {
@@ -20,6 +19,7 @@
         }
 
         body {
+            background: -webkit-linear-gradient(left,#2C3539,#25383C,#0C090A);
             font-family: "Poppins", sans-serif;
             height: 100vh;
         }
@@ -58,7 +58,7 @@
         #formContent {
             -webkit-border-radius: 10px 10px 10px 10px;
             border-radius: 10px 10px 10px 10px;
-            background: #fff;
+            background: #F9F8F6;
             padding: 30px;
             width: 90%;
             max-width: 450px;
@@ -70,7 +70,15 @@
         }
 
         #formFooter {
-            background-color: #f6f6f6;
+            background-color: #FAFAD2;
+            border-top: 1px solid #8C001A;
+            padding: 25px;
+            text-align: center;
+            -webkit-border-radius: 0 0 10px 10px;
+            border-radius: 0 0 10px 10px;
+        }
+        #formFooter2 {
+            background-color: #0C090A;
             border-top: 1px solid #dce8f1;
             padding: 25px;
             text-align: center;
@@ -118,7 +126,7 @@
         }
 
         input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-            background-color: #39ace7;
+            background-color: #20B2AA;
         }
 
         input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -130,7 +138,7 @@
         }
 
         input[type=text] {
-            background-color: #f6f6f6;
+            background-color: #DEF5FF;
             border: none;
             color: #0d0d0d;
             padding: 15px 32px;
@@ -256,7 +264,7 @@
         }
 
         .underlineHover:hover {
-            color: #0d0d0d;
+            color: #50C878;
         }
 
         .underlineHover:hover:after{
@@ -294,6 +302,9 @@
 
         <div id="formFooter">
             <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+        <div id="formFooter2">
+            <a class="underlineHover" href="/">Home?</a>
         </div>
 
     </div>

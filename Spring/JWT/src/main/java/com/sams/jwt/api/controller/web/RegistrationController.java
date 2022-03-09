@@ -7,32 +7,26 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
-@AllArgsConstructor
-public class RegistrationController {
 
-    private final RegistrationService registrationService;
+public class RegistrationController {
+/*
+
+
 
     @GetMapping(path="index")
     public String getIndex(){
         return "index";
     }
-    @GetMapping("api/index")
+    @GetMapping("login")
     public String getLogin() {
         return "login";
     }
-    @GetMapping("api/registration")
+    @GetMapping("registration")
     public String getRegistration() {
         return "registration";
     }
 
-    @PostMapping(path = "registration")
-    public String register(@RequestBody RegistrationRequest request) {
-        return registrationService.register(request);
-    }
+*/
 
-    @GetMapping(path = "api/v1/registration/confirm")
-    public String confirm(@RequestParam("token") String token) {
-        return registrationService.confirmToken(token);
-    }
 
 }
