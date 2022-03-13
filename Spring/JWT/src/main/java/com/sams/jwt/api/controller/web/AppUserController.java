@@ -2,12 +2,14 @@ package com.sams.jwt.api.controller.web;
 
 import com.sams.jwt.api.controller.RegistrationRequest;
 import com.sams.jwt.model.dto.AppUser;
+import com.sams.jwt.service.AppUserService;
 import com.sams.jwt.service.RegistrationService;
 import com.sams.jwt.service.UserService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+
 
 
 @Slf4j
@@ -27,6 +30,8 @@ public class AppUserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private AppUserService appUserService;
 
     @GetMapping("home")
     public String viewHomePage(Model model)
@@ -35,6 +40,14 @@ public class AppUserController {
         List<AppUser> listUsers = userService.getAllUsers();
         model.addAttribute("listUsers", listUsers);
         return "home";
+    }
+    @GetMapping("profile")
+    public String viewProfile(Model model)
+    {
+        log.info("Profile page called");
+        UserDetails Users = appUserService.loadUserByUsername("sams52tas@gmail.com");
+        model.addAttribute("Users", Users);
+        return "profile";
     }
     @GetMapping("login")
     public String getLogin() {

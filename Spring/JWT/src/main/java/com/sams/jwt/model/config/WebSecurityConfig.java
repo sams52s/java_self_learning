@@ -14,6 +14,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.sams.jwt.model.dto.AppUserRole.*;
+
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
@@ -31,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/api/v*/registration/**").permitAll()
                     .antMatchers("/index").permitAll()
                     .antMatchers("/home/**").permitAll()
-                    .antMatchers("/login/**").permitAll()
+                    .antMatchers("/profile/**").permitAll()
                     .antMatchers("/registration/**").permitAll()
                     .antMatchers("/confirm/**").permitAll()
                 .anyRequest()
