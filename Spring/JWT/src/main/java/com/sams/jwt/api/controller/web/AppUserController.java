@@ -1,5 +1,6 @@
 package com.sams.jwt.api.controller.web;
 
+import com.sams.jwt.api.controller.LoginRequest;
 import com.sams.jwt.api.controller.RegistrationRequest;
 import com.sams.jwt.model.dto.AppUser;
 import com.sams.jwt.service.AppUserService;
@@ -14,11 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-
 
 
 @Slf4j
@@ -33,20 +32,29 @@ public class AppUserController {
     @Autowired
     private AppUserService appUserService;
 
-    @GetMapping("home")
+    @GetMapping("/alluser")
     public String viewHomePage(Model model)
     {
-        log.info("Home page called");
+        log.info("All User page called");
         List<AppUser> listUsers = userService.getAllUsers();
         model.addAttribute("listUsers", listUsers);
-        return "home";
+        return "alluser";
     }
-    @GetMapping("profile")
+   @PostMapping(path="/profile")
+    public String login(LoginRequest request)
+    {
+        log.info("home page called");
+        System.out.println(request);
+        System.out.println(request.getEmail());
+        log.info("Log In");
+        appUserService.loadUserByUsername(request.getEmail());
+        return registrationService.login(request.getEmail());
+    }
+    @GetMapping(path="/profile")
     public String viewProfile(Model model)
     {
         log.info("Profile page called");
-        UserDetails Users = appUserService.loadUserByUsername("sams52tas@gmail.com");
-        model.addAttribute("Users", Users);
+
         return "profile";
     }
     @GetMapping("login")
@@ -54,15 +62,16 @@ public class AppUserController {
         log.info("Login page called");
         return "login";
     }
+
     @GetMapping("registration")
     public String getRegistration() {
         log.info("Registration page called");
         return "registration";
     }
-   @PostMapping(path = "registration")
-    public String register(@RequestBody RegistrationRequest request) {
+   @PostMapping(path = "/registration")
+    public String register(RegistrationRequest request) {
         log.info("New Registration");
-        return registrationService.register(request);
+        return registrationService.register(request) ;
     }
 
     @GetMapping(path = "api/v1/registration/confirm")

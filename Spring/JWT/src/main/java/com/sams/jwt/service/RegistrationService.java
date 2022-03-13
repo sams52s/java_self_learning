@@ -1,6 +1,7 @@
 package com.sams.jwt.service;
 
 
+import com.sams.jwt.api.controller.LoginRequest;
 import com.sams.jwt.api.controller.RegistrationRequest;
 import com.sams.jwt.api.security.EmailValidator;
 import com.sams.jwt.model.dto.AppUser;
@@ -30,14 +31,14 @@ public class RegistrationService {
             throw new IllegalStateException("email not valid");
         }
 
+
         String token = appUserService.signUpUser(
                 new AppUser(
                         request.getFirstName(),
                         request.getLastName(),
                         request.getEmail(),
                         request.getPassword(),
-                        AppUserRole.USER
-
+                        AppUserRole.ADMIN
                 )
         );
 
@@ -45,9 +46,19 @@ public class RegistrationService {
         emailSender.send(
                 request.getEmail(),
                 buildEmail(request.getFirstName(), link));
-
-        return token;
+        return "registration";
     }
+    public String login(String email){
+        boolean isValidEmail = emailValidator.
+                test(email);
+
+        if (!isValidEmail) {
+            throw new IllegalStateException("email not valid");
+        }
+        String loginEmail= String.valueOf(appUserService.loadUserByUsername(email));
+        return "home";
+    }
+
 
     @Transactional
     public String confirmToken(String token) {

@@ -294,9 +294,9 @@
             <img src="https://icons-for-free.com/iconfiles/png/512/anonymous+app+contacts+open+line+profile+user+icon-1320183042822068474.png" id="icon" alt="User Icon" />
         </div>
 
-        <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <form th:action="@{/profile}" method="post">
+            Email: <br><input type="text" id="login" class="fadeIn second" name="email" placeholder="Your Email address">
+            Password: <br><input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
