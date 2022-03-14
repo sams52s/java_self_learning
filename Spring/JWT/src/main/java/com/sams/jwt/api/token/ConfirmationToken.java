@@ -38,12 +38,15 @@ public class ConfirmationToken {
 
     private LocalDateTime confirmedAt;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             nullable = false,
-            name = "app_user_id"
+            name = "appUser_id"
+//            referencedColumnName = "id"
     )
     private AppUser appUser;
+//    @JoinTable(name = "confirmation_token", joinColumns = @JoinColumn(name = "app_user_id"), inverseJoinColumns = @JoinColumn(name = "confirmation_token_id"))
+
 
     public ConfirmationToken(String token,
                              LocalDateTime createdAt,

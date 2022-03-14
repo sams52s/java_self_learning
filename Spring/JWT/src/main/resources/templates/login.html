@@ -293,6 +293,9 @@
         <div class="fadeIn first">
             <img src="https://icons-for-free.com/iconfiles/png/512/anonymous+app+contacts+open+line+profile+user+icon-1320183042822068474.png" id="icon" alt="User Icon" />
         </div>
+        <div class="alert alert-danger" role="alert" th:if="${invalidSession !=null}">
+            <p th:text="${invalidSession}"></p>
+        </div>
 
         <form th:action="@{/profile}" method="post">
             Email: <br><input type="text" id="login" class="fadeIn second" name="email" placeholder="Your Email address">

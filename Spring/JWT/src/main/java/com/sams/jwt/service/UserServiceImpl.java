@@ -15,8 +15,31 @@ public class UserServiceImpl implements UserService {
     private AppUserRepository appUserRepository;
 
     @Override
-    public List<AppUser> getAllUsers(){
-        return appUserRepository.findAll();
+    public void deleteUserById(long id) {
+        try{
+            appUserRepository.deleteById(id);
+        }catch (Exception error){
+//            System.out.println(error);
+            error.printStackTrace();
+        }
+        System.out.println(id);
     }
+
+    @Override
+    public List<AppUser> getAllUsers(){return appUserRepository.findAll();}
+
+    @Override
+    public AppUser getUserById(long id) {
+        Optional<AppUser> optional= appUserRepository.findById(id);
+        AppUser user=null;
+        if(optional.isPresent()){
+            user = optional.get();
+        }
+        else {
+            throw new RuntimeException("User ID Not found");
+        }
+        return user;
+    }
+
 
 }

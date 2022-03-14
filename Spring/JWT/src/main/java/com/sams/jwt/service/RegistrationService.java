@@ -56,7 +56,7 @@ public class RegistrationService {
             throw new IllegalStateException("email not valid");
         }
         String loginEmail= String.valueOf(appUserService.loadUserByUsername(email));
-        return "home";
+        return "profile";
     }
 
 

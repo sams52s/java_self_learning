@@ -31,6 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/", "index","/css/*", "/js/*").permitAll()
                     .antMatchers("/index").permitAll()
+                    .antMatchers("/showFormForUpdate/**").permitAll()
+                    .antMatchers("/deleteUser/**").permitAll()
+                    .antMatchers("/userUpdate").permitAll()
                     .antMatchers("/home/**").permitAll()
                 //.hasRole(ADMIN.name())
                     .antMatchers("/profile/**").permitAll()
@@ -61,6 +64,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .deleteCookies("JSESSIONID", "remember-me")
                     .logoutSuccessUrl("/login")
                     .permitAll()
+                .and()
+                .sessionManagement()
+                .invalidSessionUrl("/login?invalid-session=true");
         ;
     }
 

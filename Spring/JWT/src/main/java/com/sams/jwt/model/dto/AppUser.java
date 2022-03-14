@@ -1,5 +1,6 @@
 package com.sams.jwt.model.dto;
 
+import com.sams.jwt.api.token.ConfirmationToken;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -48,6 +49,8 @@ public class AppUser implements UserDetails {
     private AppUserRole appUserRole;
     private Boolean locked = false;
     private Boolean enabled = false;
+    @OneToOne(mappedBy = "appUser")
+    private ConfirmationToken confirmationToken;
 
     public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
         this.firstName = firstName;
