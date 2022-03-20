@@ -1,7 +1,7 @@
 package com.sams.jwt.service;
 
 import com.sams.jwt.api.token.ConfirmationToken;
-import com.sams.jwt.api.token.ConfirmationTokenRepository;
+import com.sams.jwt.repository.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

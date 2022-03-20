@@ -1,8 +1,7 @@
 package com.sams.jwt.service;
 
 
-import com.sams.jwt.api.controller.LoginRequest;
-import com.sams.jwt.api.controller.RegistrationRequest;
+import com.sams.jwt.api.controller.Request.RegistrationRequest;
 import com.sams.jwt.api.security.EmailValidator;
 import com.sams.jwt.model.dto.AppUser;
 import com.sams.jwt.model.dto.AppUserRole;

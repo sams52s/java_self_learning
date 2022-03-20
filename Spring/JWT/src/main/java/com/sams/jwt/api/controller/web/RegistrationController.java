@@ -1,6 +1,6 @@
 package com.sams.jwt.api.controller.web;
 
-import com.sams.jwt.api.controller.RegistrationRequest;
+import com.sams.jwt.api.controller.Request.RegistrationRequest;
 import com.sams.jwt.service.RegistrationService;
 
 import lombok.AllArgsConstructor;

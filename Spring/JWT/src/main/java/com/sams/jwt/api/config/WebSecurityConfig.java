@@ -1,4 +1,4 @@
-package com.sams.jwt.model.config;
+package com.sams.jwt.api.config;
 
 import com.sams.jwt.service.AppUserService;
 import lombok.AllArgsConstructor;
@@ -43,6 +43,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/confirm/**").permitAll()
                 .anyRequest()
                     .authenticated()
+                .and()
+                .oauth2Login()
+                    .loginPage("/login")
                 .and()
                 .formLogin()
                     .loginPage("/login")

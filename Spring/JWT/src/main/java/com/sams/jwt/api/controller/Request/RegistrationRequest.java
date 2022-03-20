@@ -1,4 +1,4 @@
-package com.sams.jwt.api.controller;
+package com.sams.jwt.api.controller.Request;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

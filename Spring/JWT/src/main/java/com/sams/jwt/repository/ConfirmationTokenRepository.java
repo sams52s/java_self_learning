@@ -1,5 +1,6 @@
-package com.sams.jwt.api.token;
+package com.sams.jwt.repository;
 
+import com.sams.jwt.api.token.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

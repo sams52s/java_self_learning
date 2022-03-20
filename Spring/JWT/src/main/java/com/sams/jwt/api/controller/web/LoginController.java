@@ -1,6 +1,6 @@
 package com.sams.jwt.api.controller.web;
 
-import com.sams.jwt.api.controller.LoginRequest;
+import com.sams.jwt.api.controller.Request.LoginRequest;
 import com.sams.jwt.service.AppUserService;
 import com.sams.jwt.service.RegistrationService;
 import com.sams.jwt.service.UserService;
