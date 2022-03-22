@@ -6,11 +6,11 @@
     - FrontEnd: Thymeleaf
     - DataBase: Postgres
 ## Main Goal
-    - [x] Creating a proper Spring Boot back end and thymeleaf front end and connect it together
-    - [x] Creating a DB conncected Login Registration
-    - [x] Update Delete User
-    - [x] Email Validation by google 
-    - [x] OAuth Loging and registration (Google)
+- [x] Creating a proper Spring Boot back end and thymeleaf front end and connect it together
+- [x] Creating a DB conncected Login Registration
+- [x] Update Delete User
+- [x] Email Validation by google
+- [x] OAuth Loging and registration (Google)
 
 ## Description
     This is my 1st full project using Spring Boot and Thymeleaf.
