@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class fileHandler {
+public class FileHandler {
 
     /**
      * This method will read my all file.
@@ -16,7 +16,7 @@ public class fileHandler {
      * It will return all values as list
      * @return
      */
-    public List<String> FileReader(String fileName){
+    public List<String> fileReader(String fileName){
         String filePath="/home/dsi/work/Learning Java/Basic java/ResultProcessing/src/dsi/sams/util/providedFiles/"+fileName;
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
@@ -34,7 +34,7 @@ public class fileHandler {
      * @param fileName is for naming that csv file
      * This method will take a listed parameter and use those to write it.
      */
-    public void FileWriter(String fileName/* Listed parameter */){
+    public void fileWriter(String fileName/* Listed parameter */){
         //..
     }
 
