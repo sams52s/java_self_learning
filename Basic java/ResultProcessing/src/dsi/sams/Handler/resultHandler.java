@@ -1,6 +1,5 @@
 package dsi.sams.Handler;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class resultHandler {
@@ -13,8 +12,7 @@ public class resultHandler {
      * then it sends that list to file Writer to write my desire file.
      */
     public void resultGenerator(){
-       List list=new ArrayList();
-       list= fileUHandler.FileReader("marks.csv");
+       List<String> list=fileUHandler.FileReader("marks.csv");
         list.forEach(System.out::println);
         fileUHandler.FileWriter("");
     }
