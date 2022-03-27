@@ -10,13 +10,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PaperHandler {
-    public static Map<Integer, PaperInfo> paperDetails = new HashMap<>();
+    public static Map<Integer, PaperInfo> paperDetails = new HashMap<>();//For storing mark_sheet.csv value.
 
     public static void loadSubjectDetails(String subjectPaperFile, String paperInfoFile){
         loadSubjectCode(subjectPaperFile);
         loadPaperDetails(paperInfoFile);
     }
 
+    /**
+     * @param filePath SubjectPaper.csv will read here.
+     */
     private static void loadSubjectCode(String filePath){
         String line="";
         try {
@@ -31,6 +34,10 @@ public class PaperHandler {
             e.printStackTrace();
         }
     }
+
+    /**
+     * @param filePath this method read PaperInfo.csv file
+     */
     private static void loadPaperDetails(String filePath){
         String line="";
         try {
@@ -41,15 +48,18 @@ public class PaperHandler {
                 int theoryMark = Integer.parseInt(value[5]);
                 int practicalMark = Integer.parseInt(value[6]);
                 PaperInfo paperInfo = paperDetails.get(paperCode);
-                paperInfo.setTheoryMark(theoryMark);
+               paperInfo.setTheoryMark(theoryMark);
                 paperInfo.setPracticalMark(practicalMark);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
     static void clear(){
         paperDetails.clear();
     }
+
 }

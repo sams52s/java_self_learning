@@ -9,9 +9,7 @@ public class StudentInfo {
     private int totalMark;
     private boolean isPass;
     private String pass;
-    private Map<Integer, MarksInfo> marks;
-
-
+    private Map<Integer, MarksInfo> marks; //this map marks will take marks and check isPass and store marks.
     public StudentInfo(int roll, String name) {
         this.roll = roll;
         this.name = name;
@@ -59,6 +57,12 @@ public class StudentInfo {
         isPass = pass;
     }
 
+    /**
+     * if it is first time input then it add otherwise for update.
+     * @param subjectCode to collect maks info of that particular subject.
+     * @param mark this input will go to MarksInfo and been stored and checked if it is pass or not.
+     * @param isPass to check if pass or not.
+     */
     public void addOrUpdateMarks(int subjectCode, int mark, boolean isPass){
         marks.putIfAbsent(subjectCode, new MarksInfo());
         MarksInfo markInfo = marks.get(subjectCode);
@@ -66,19 +70,22 @@ public class StudentInfo {
         markInfo.setIsPass(isPass);
         totalMark += mark;
         this.isPass = this.isPass && isPass;
+        //isPass is a boolean value. It will give True and false value that won't look nice. So I convert that in a symbolic version.
         if(this.isPass){
             this.pass="T";
         }
         else {
             this.pass="F";
         }
-
     }
 
+    /**
+     *All the information needed to cleat that result.csv file.
+     * @return for output creating a sting format .
+     */
     @Override
     public String toString() {
-        return "" +
-                "" + roll +
+        return ""+ roll +
                 ":" + name  +
                 ":" + totalMark +
                 ":"+pass
