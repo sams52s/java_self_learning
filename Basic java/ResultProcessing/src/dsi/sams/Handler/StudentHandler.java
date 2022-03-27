@@ -19,9 +19,9 @@ public class StudentHandler {
             BufferedReader bufferedReader =new BufferedReader(new FileReader(studentsInfoFile));
             while ((line=bufferedReader.readLine())!=null){
                 String[] value=line.split(":");
-                int roolNo = Integer.parseInt(value[0]);
+                int rollNo = Integer.parseInt(value[0]);
                 String name = value[1];
-                studentDetails.put(roolNo, new StudentInfo(roolNo, name));
+                studentDetails.put(rollNo, new StudentInfo(rollNo, name));
             }
             loadStudentMarkDetails(marksFile);
         } catch (IOException e) {
@@ -36,9 +36,8 @@ public class StudentHandler {
             BufferedReader bufferedReader =new BufferedReader(new FileReader(filePath));
             while ((line=bufferedReader.readLine())!=null){
                 String[] value=line.split(":");
-
-                int roolNo = Integer.parseInt(value[0]);
-                StudentInfo studentInfo = studentDetails.get(roolNo);
+                int rollNo = Integer.parseInt(value[0]);
+                StudentInfo studentInfo = studentDetails.get(rollNo);
 
                 int paperCode = Integer.parseInt(value[1]);
                 int theoryMark = Integer.parseInt(value[4]);

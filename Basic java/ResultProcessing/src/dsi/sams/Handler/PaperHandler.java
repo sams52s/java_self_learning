@@ -23,10 +23,8 @@ public class PaperHandler {
             BufferedReader bufferedReader =new BufferedReader(new FileReader(filePath));
             while ((line=bufferedReader.readLine())!=null){
                 String[] value=line.split(":");
-
                 int subjectCode = Integer.parseInt(value[0]);
                 int paperCode = Integer.parseInt(value[1]);
-
                 paperDetails.put(paperCode, new PaperInfo(paperCode, subjectCode));
             }
         } catch (IOException e) {
@@ -42,7 +40,6 @@ public class PaperHandler {
                 int paperCode = Integer.parseInt(value[0]);
                 int theoryMark = Integer.parseInt(value[5]);
                 int practicalMark = Integer.parseInt(value[6]);
-
                 PaperInfo paperInfo = paperDetails.get(paperCode);
                 paperInfo.setTheoryMark(theoryMark);
                 paperInfo.setPracticalMark(practicalMark);

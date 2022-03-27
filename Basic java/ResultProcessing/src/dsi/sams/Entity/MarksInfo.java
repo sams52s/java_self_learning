@@ -12,7 +12,6 @@ public class MarksInfo {
     public void updateMark(int mark){
         this.mark += mark;
     }
-
     public void setIsPass(boolean isPass){
         this.isPass = isPass;
     }

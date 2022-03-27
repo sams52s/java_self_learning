@@ -20,12 +20,10 @@ public class PaperInfo {
 
     @Override
     public String toString() {
-        return "PaperInfo{" +
-                "subjectCode=" + subjectCode +
-                ", paperCode=" + paperCode +
-                ", theoryMark=" + theoryMark +
-                ", practicalMark=" + practicalMark +
-                '}';
+        return subjectCode +
+                ":" + paperCode +
+                ":" + theoryMark +
+                ":" + practicalMark ;
     }
 
     public int getSubjectCode() {

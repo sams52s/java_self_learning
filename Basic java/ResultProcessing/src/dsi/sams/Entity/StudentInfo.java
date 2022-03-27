@@ -8,6 +8,7 @@ public class StudentInfo {
     private String name;
     private int totalMark;
     private boolean isPass;
+    private String pass;
     private Map<Integer, MarksInfo> marks;
 
 
@@ -65,15 +66,22 @@ public class StudentInfo {
         markInfo.setIsPass(isPass);
         totalMark += mark;
         this.isPass = this.isPass && isPass;
+        if(this.isPass){
+            this.pass="T";
+        }
+        else {
+            this.pass="F";
+        }
+
     }
 
     @Override
     public String toString() {
-        return "StudentInfo{" +
-                "roll=" + roll +
-                ", name='" + name + '\'' +
-                ", totalMark=" + totalMark +
-                ", isPass=" + isPass +
-                '}';
+        return "" +
+                "" + roll +
+                ":" + name  +
+                ":" + totalMark +
+                ":"+pass
+                ;
     }
 }
