@@ -22,29 +22,29 @@ Finally I have implemented everything in full project.
 - [ ] Generics
 - [ ] Basic of threads
 - [ ] Garbage collections
-- [ ] Streams
+- [x] Streams
 - [ ] JVM
 
 ## Build Tools
 - [ ] Maven
 
 ## Web Frameworks
-- [ ] Spring
-- [ ] Spring Boot
+- [x] Spring
+- [x] Spring Boot
 
 ## Object Relational Mapping (ORM)
-- [ ] JPA
-- [ ] Spring Data JPA
+- [x] JPA
+- [x] Spring Data JPA
 - [ ] Hibernate
 - [ ] EBean
 
 ## Logging Frameworks
 - [ ] Logback
-- [ ] Log4j2
+- [x] Log4j2
 - [ ] TinyLog
 
 ## Java Database Connectivity (JDBC)
-- [ ] SQL
+- [x] SQL
 - [ ] JDBI3
 - [ ] JDBC Template
 
