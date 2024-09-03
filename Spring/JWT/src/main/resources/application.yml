@@ -1,0 +1,45 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    password: 123
+    url: jdbc:postgresql://localhost:5432/hostelms
+    username: sams
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 970707355379-89pq1jioq4vn0vjue40k20tdtj5ild6h.apps.googleusercontent.com
+            client-secret: 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
+  jpa:
+    hibernate:
+#      ddl-auto: create-drop
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+
+  mail:
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
